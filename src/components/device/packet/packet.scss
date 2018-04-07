@@ -1,0 +1,16 @@
+.packet {
+  display: flex;
+  position: relative;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+}
