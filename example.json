@@ -15,7 +15,7 @@
         "dest_ip": "55.66.77.88",
         "dest_port": 5678,
         "protocol": "HTTP",
-        "good_packet": 1,
+        "good_packet": 0,
         "allowed": 1
       },
       {

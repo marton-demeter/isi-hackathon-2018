@@ -5,7 +5,6 @@ import c from 'classnames';
 
 class Device extends React.Component {
   handleClick = event => {
-    console.log(this.state);
     this.setState({ expanded: !this.state.expanded });
   }
   state = {
@@ -30,13 +29,14 @@ class Device extends React.Component {
               return(
                 <Packet
                   key={i}
+                  ids={packet.id}
                   date={packet.date}
                   time={packet.time}
-                  src_ip={packet.src_ip}
-                  src_port={packet.srt_port}
-                  dst_mac={packet.dst_mac}
-                  dst_ip={packet.dst_ip}
-                  dst_port={packet.dst_port}
+                  src_ip={packet.source_ip}
+                  src_port={packet.source_port}
+                  dst_mac={packet.dest_mac}
+                  dst_ip={packet.dest_ip}
+                  dst_port={packet.dest_port}
                   protocol={packet.protocol}
                   good={packet.good_packet}
                   allow={packet.allowed}

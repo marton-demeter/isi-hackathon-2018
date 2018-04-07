@@ -1,13 +1,30 @@
 import React from 'react';
 import s from './packet.scss';
+import c from 'classnames';
+import axios from 'axios';
 
 class Packet extends React.Component {
-  handleClick = event => {
+  constructor(props) {
+    super(props);
+  }
+  handleClick = (event,num) => {
     event.stopPropagation();
+    if(num !== this.state.allow) {
+      // send status of modified configuration
+      // axios.post({})
+    }
+    num === 1 ? this.setState({ allow: 1 }) : this.setState({ allow: 0 });
+  }
+  state = {
+    allow: this.props.good,
+    ids: this.props.ids
   }
   render() {
     return (
-      <div className={s.packet} onClick={e => this.handleClick(e)}>
+      <div 
+        className={c(s.packet,this.state.allow?s.allow:s.block)}
+        onClick={e => this.handleClick(e)}
+        >
         <table>
           <tbody>
             <tr>
@@ -42,6 +59,14 @@ class Packet extends React.Component {
             </tr>
           </tbody>
         </table>
+        <div className={s.buttons}>
+          <div className={s.a} onClick={e => this.handleClick(e,1)}>
+            <i className={c(s.fa,s['fa-check'])} />
+          </div>
+          <div className={s.reject} onClick={e => this.handleClick(e,0)}>
+            <i className={c(s.fa,s['fa-times'])} />
+          </div>
+        </div>
       </div>
     );
   }
