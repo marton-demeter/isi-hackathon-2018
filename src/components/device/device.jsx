@@ -10,11 +10,11 @@ class Device extends React.Component {
   }
   state = {
     expanded: false
-  }•≥
+  }
   render() {
     return (
       <div className={s.device} onClick={e => this.handleClick(e)}>
-        <className={s.info}> 88
+        <div className={s.info}>
           <div className={s.org}>
             { this.props.org || 'Device Org' }
           </div>

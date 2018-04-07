@@ -15,8 +15,15 @@ class App extends React.Component {
       console.log(data);
     });
     socket.on('post', packets => {
-      this.setState({ ...this.state, packets: packets });
-      console.log(this.state);
+      let newState = this.state;
+      Object.keys(packets).forEach(device => {
+        if(newState.packets[device])
+          newState.packets[device].packets.concat(device.packets);
+        else
+          newState.packets[device] = packets[device];
+      });
+      console.log(newState)
+      this.setState(newState);
     })
     this.setState({ ...this.state, socket: socket });
   }
