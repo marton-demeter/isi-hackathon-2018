@@ -11,6 +11,8 @@ class Device extends React.Component {
     expanded: false
   }
   render() {
+    console.log(this.props);
+    console.log(s);
     return (
       <div className={s.device} onClick={e => this.handleClick(e)}>
         <div className={s.info}>
@@ -23,6 +25,30 @@ class Device extends React.Component {
               <tr>
                 <th> MAC Address: </th>
                 <td> { this.props.mac || 'MAC Address' } </td>
+              </tr>
+              <tr 
+                className={this.props.host.length?null:s.invisible}
+              >
+                <th> Host: </th>
+                <td> { this.props.host?this.props.host.toString().replace(/,/g,', '):null } </td>
+              </tr>
+              <tr 
+                className={this.props.token.length?null:s.invisible}
+              >
+                <th> Token: </th>
+                <td> { this.props.token?this.props.token.toString().replace(/,/g,', '):null } </td>
+              </tr>
+              <tr 
+                className={this.props.serial.length?null:s.invisible}
+              >
+                <th> Serial: </th>
+                <td> { this.props.serial?this.props.serial.toString().replace(/,/g,', '):null } </td>
+              </tr>
+              <tr 
+                className={this.props.model.length?null:s.invisible}
+              >
+                <th> Model: </th>
+                <td> { this.props.model?this.props.model.toString().replace(/,/g,', '):null } </td>
               </tr>
             </tbody>
           </table>

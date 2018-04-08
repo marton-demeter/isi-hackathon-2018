@@ -14,7 +14,7 @@ let websocketClients = Array();
 app.post('/api/post', (req, res) => {
   console.log('received post');
   websocketClients.forEach(client => {
-    client.emit('post', req.body.packets);
+    client.emit('post', req.body);
   });
   res.send('received');
 });

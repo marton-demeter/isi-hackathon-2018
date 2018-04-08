@@ -9,7 +9,7 @@
     "dev": "yarn concurrently \"node express/server.js\" \"yarn webpack-dev-server --config webpack/webpack.development.js\"",
     "prod": "yarn webpack --config webpack/webpack.production.js",
     "dist": "yarn prod",
-    "zip": "yarn dist && zip -r -X isi.zip dist express package.json"
+    "zip": "yarn dist && zip -r -X isi.zip dist express package.json .ebextensions"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -40,6 +40,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

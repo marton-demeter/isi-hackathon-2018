@@ -10,11 +10,15 @@ class App extends React.Component {
     super(props);
   }
   componentDidMount() {
-    let socket = io('http://localhost:8080');
+    let host;
+    location.hostname=='localhost' ? host=location.host : host=location.hostname;
+    let socket = io.connect('http://' + location.hostname + ':8080');
     socket.on('connected', data => {
       console.log(data);
     });
     socket.on('post', packets => {
+      if(Object.keys(packets)[0] == 'packets') packets = packets.packets;
+      console.log(packets);
       let newState = this.state;
       Object.keys(packets).forEach(device => {
         if(newState.packets[device])
@@ -42,7 +46,11 @@ class App extends React.Component {
                   key={ i }
                   mac={ key }
                   org={ this.state.packets[key].org }
-                  packets={ this.state.packets[key].packets }
+                  host={ this.state.packets[key].host || [] }
+                  packets={ this.state.packets[key].packets || []}
+                  token={ this.state.packets[key].token || []}
+                  serial={ this.state.packets[key].serialNumber || []}
+                  model={ this.state.packets[key].model || []}
                 />
               );
             })

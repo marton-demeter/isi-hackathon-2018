@@ -11,6 +11,12 @@
   .info {
     padding: 0.5rem;
     cursor: pointer;
+    .invisible {
+      display: none;
+    }
+    th {
+      width: 7rem;
+    }
   }
 }
 
