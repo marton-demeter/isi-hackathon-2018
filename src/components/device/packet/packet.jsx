@@ -7,18 +7,17 @@ class Packet extends React.Component {
   constructor(props) {
     super(props);
   }
-  handleClick = (event,num) => {
+  handlePacketClick = event => {
     event.stopPropagation();
-    if(num !== undefined && num !== this.state.allow) {
+  }
+  handleButtonClick = (event, num) => {
+    if(num !== this.state.allow) {
       let status = { ids: this.state.ids, allow: num };
       console.log(status);
       // send status of modified configuration
       // axios.post({})
     }
-    if(num === 1)
-      this.setState({ allow: 1 });
-    else if(num === 0) 
-      this.setState({ allow: 0 });
+    num === 1 ? this.setState({ allow: 1 }) : this.setState({ allow: 0 });
   }
   state = {
     allow: this.props.good,
@@ -28,7 +27,7 @@ class Packet extends React.Component {
     return (
       <div 
         className={c(s.packet,this.state.allow?s.allow:s.block)}
-        onClick={e => this.handleClick(e)}
+        onClick={e => this.handlePacketClick(e)}
         >
         <table>
           <tbody>
@@ -64,15 +63,19 @@ class Packet extends React.Component {
             </tr>
             <tr className={this.props.rule?null:s.norule}>
               <th> Rule: </th>
-              <td colspan='3'> { this.props.rule || 'Rule Description' } </td>
+              <td colSpan='3'> { this.props.rule || 'Rule Description' } </td>
             </tr>
           </tbody>
         </table>
         <div className={s.buttons}>
-          <div className={s.a} onClick={e => this.handleClick(e,1)}>
+          <div 
+            className={s.a} 
+            onClick={e => this.handleButtonClick(e,1)}>
             <i className={c(s.fa,s['fa-check'])} />
           </div>
-          <div className={s.reject} onClick={e => this.handleClick(e,0)}>
+          <div 
+            className={s.reject} 
+            onClick={e => this.handleButtonClick(e,0)}>
             <i className={c(s.fa,s['fa-times'])} />
           </div>
         </div>

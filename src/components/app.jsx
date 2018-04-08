@@ -22,7 +22,6 @@ class App extends React.Component {
         else
           newState.packets[device] = packets[device];
       });
-      console.log(newState)
       this.setState(newState);
     })
     this.setState({ ...this.state, socket: socket });
