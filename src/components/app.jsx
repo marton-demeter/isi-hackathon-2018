@@ -18,7 +18,6 @@ class App extends React.Component {
     });
     socket.on('post', packets => {
       if(Object.keys(packets)[0] == 'packets') packets = packets.packets;
-      console.log(packets);
       let newState = this.state;
       Object.keys(packets).forEach(device => {
         if(newState.packets[device])

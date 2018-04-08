@@ -11,8 +11,6 @@ class Device extends React.Component {
     expanded: false
   }
   render() {
-    console.log(this.props);
-    console.log(s);
     return (
       <div className={s.device} onClick={e => this.handleClick(e)}>
         <div className={s.info}>
