@@ -24,6 +24,10 @@ table {
   width: 100%;
 }
 
+.norule {
+  display: none;
+}
+
 .buttons {
   display: flex;
   flex-direction: column;

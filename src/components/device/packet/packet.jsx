@@ -27,7 +27,7 @@ class Packet extends React.Component {
   render() {
     return (
       <div 
-        className={c(s.packet,this.state.allow?s.allow:s.block,s['flip-3d'])}
+        className={c(s.packet,this.state.allow?s.allow:s.block)}
         onClick={e => this.handleClick(e)}
         >
         <table>
@@ -61,6 +61,10 @@ class Packet extends React.Component {
               <td> { this.props.src_port }</td>
               <th>Good: </th>
               <td> { this.props.good }</td>
+            </tr>
+            <tr className={this.props.rule?null:s.norule}>
+              <th> Rule: </th>
+              <td colspan='3'> { this.props.rule || 'Rule Description' } </td>
             </tr>
           </tbody>
         </table>

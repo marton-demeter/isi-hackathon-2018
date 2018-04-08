@@ -16,6 +16,7 @@
         "dest_port": 5678,
         "protocol": "HTTP",
         "good_packet": 0,
+        "rule": "Malicious packet noooooooo",
         "allowed": 1
       },
       {
