@@ -18,13 +18,13 @@ class Device extends React.Component {
         <div className={s.info}>
           <table>
             <tbody>
-              <tr>
+              <tr className={this.props.org?null:s.invisible}>
                 <th> Vendor: </th>
-                <td> { this.props.org || 'Device Vendor' } </td>
+                <td> { this.props.org } </td>
               </tr>
               <tr>
                 <th> MAC Address: </th>
-                <td> { this.props.mac || 'MAC Address' } </td>
+                <td> { this.props.mac || 'Unidentified Device' } </td>
               </tr>
               <tr 
                 className={this.props.host.length?null:s.invisible}

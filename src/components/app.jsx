@@ -44,8 +44,8 @@ class App extends React.Component {
               return(
                 <Device
                   key={ i }
-                  mac={ key }
-                  org={ this.state.packets[key].org }
+                  mac={ key || null }
+                  org={ this.state.packets[key].org || null }
                   host={ this.state.packets[key].host || [] }
                   packets={ this.state.packets[key].packets || []}
                   token={ this.state.packets[key].token || []}
