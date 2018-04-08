@@ -11,20 +11,6 @@ app.use(bodyParser.json({ limit: '1024mb' }));
 app.use(bodyParser.urlencoded({ limit: '1024mb', extended: true }));
 app.use(express.static(path.join(__dirname,'..','dist')));
 let websocketClients = Array();
-app.post('/api/post-devices', (req, res) => {
-  console.log('received post devices');
-  websocketClients.forEach(client => {
-    client.emit('devices', req.body.devices);
-  });
-  res.send('received');
-});
-app.post('/api/post-packets', (req, res) => {
-  console.log('received post packets');
-  websocketClients.forEach(client => {
-    client.emit('packets', req.body.packets);
-  });
-  res.send('received');
-});
 app.post('/api/post', (req, res) => {
   console.log('received post');
   websocketClients.forEach(client => {

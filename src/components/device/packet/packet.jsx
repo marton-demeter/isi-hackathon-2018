@@ -14,8 +14,13 @@ class Packet extends React.Component {
     if(num !== this.state.allow) {
       let status = { ids: this.state.ids, allow: num };
       console.log(status);
-      // send status of modified configuration
-      // axios.post({})
+      // axios({
+      //   method: 'post',
+      //   url: 'http://localhost:port/api',
+      //   data: status
+      // }).then(response => {
+      //   console.log(response);
+      // }).catch(error => {});
     }
     num === 1 ? this.setState({ allow: 1 }) : this.setState({ allow: 0 });
   }
