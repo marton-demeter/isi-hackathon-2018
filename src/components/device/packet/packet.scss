@@ -7,6 +7,17 @@ $fa-font-path: '../../../../node_modules/font-awesome/fonts';
   position: relative;
   padding: 0.5rem;
   z-index: 10;
+  .desktop {
+    flex-direction: row;
+    width: 100%;
+    table{ 
+      width: 100%;
+    }
+  }
+  .mobile {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .hidden {
@@ -30,11 +41,34 @@ table {
 
 .buttons {
   display: flex;
-  flex-direction: column;
   padding: 0.5rem;
   justify-content: space-around;
   div {
     margin: 0.5rem;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 45rem) {
+  .mobile {
+    display: flex;
+  }
+  .desktop {
+    display: none;
+  }
+  .buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 45rem) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: flex;
+  }
+  .buttons {
+    flex-direction: column;
   }
 }
