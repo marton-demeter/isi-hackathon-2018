@@ -25,7 +25,7 @@ class Packet extends React.Component {
     num === 1 ? this.setState({ allow: 1 }) : this.setState({ allow: 0 });
   }
   state = {
-    allow: this.props.good,
+    allow: this.props.allow,
     ids: this.props.ids
   }
   render() {

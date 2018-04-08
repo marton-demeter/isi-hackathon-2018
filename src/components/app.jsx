@@ -3,7 +3,6 @@ import s from './app.scss';
 import Device from './device/device.jsx';
 import axios from 'axios';
 import io from 'socket.io-client';
-import TitleBar from './titlebar/titlebar.jsx';
 
 class App extends React.Component {
   constructor(props) {
