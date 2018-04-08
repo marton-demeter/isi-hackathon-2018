@@ -14,12 +14,18 @@ class Device extends React.Component {
     return (
       <div className={s.device} onClick={e => this.handleClick(e)}>
         <div className={s.info}>
-          <div className={s.org}>
-            { this.props.org || 'Device Org' }
-          </div>
-          <div className={s.mac}>
-            { this.props.mac || 'MAC Address' }
-          </div>
+          <table>
+            <tbody>
+              <tr>
+                <th> Vendor: </th>
+                <td> { this.props.org || 'Device Vendor' } </td>
+              </tr>
+              <tr>
+                <th> MAC Address: </th>
+                <td> { this.props.mac || 'MAC Address' } </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div className={
           c(s.packets,this.state.expanded?null:s.hidden)
