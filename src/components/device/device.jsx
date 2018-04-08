@@ -34,12 +34,14 @@ class Device extends React.Component {
                   time={packet.time}
                   src_ip={packet.source_ip}
                   src_port={packet.source_port}
+                  src_mac={this.props.mac}
                   dst_mac={packet.dest_mac}
                   dst_ip={packet.dest_ip}
                   dst_port={packet.dest_port}
                   protocol={packet.protocol}
                   good={packet.good_packet}
                   allow={packet.allowed}
+                  rule={packet.rule}
                 />
               );
             })

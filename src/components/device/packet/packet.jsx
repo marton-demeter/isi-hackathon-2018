@@ -9,11 +9,15 @@ class Packet extends React.Component {
   }
   handleClick = (event,num) => {
     event.stopPropagation();
-    if(num !== this.state.allow) {
+    if(num !== undefined && num !== this.state.allow) {
+      let status = { ids: this.state.ids, allow: num };
+      console.log(status);
       // send status of modified configuration
       // axios.post({})
     }
-    num === 1 ? this.setState({ allow: 1 }) : this.setState({ allow: 0 });
+    if(num === 1)
+      this.setState({ allow: 1 });
+    else if(num === 0) this.setState({ allow: 0 });
   }
   state = {
     allow: this.props.good,
@@ -22,7 +26,7 @@ class Packet extends React.Component {
   render() {
     return (
       <div 
-        className={c(s.packet,this.state.allow?s.allow:s.block)}
+        className={c(s.packet,this.state.allow?s.allow:s.block,s['flip-3d'])}
         onClick={e => this.handleClick(e)}
         >
         <table>
