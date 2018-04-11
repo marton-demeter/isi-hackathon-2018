@@ -4,7 +4,7 @@
 
 ### Overview
 
-Device and Configuration Management - This component will provide a user interface for viewing a list of devices that have been identified on the network, and to enable an admistrator to make policy decisions regarding the ability of the device to communicate with other devices on the network, and certain network ranges.
+Device and Configuration Management - This component will provide a user interface for viewing a list of devices that have been identified on the network, and to enable an administrator to make policy decisions regarding the ability of the device to communicate with other devices on the network, and certain network ranges.
 
 ### Implementation Details
  
@@ -79,7 +79,7 @@ The results are grouped by device to allow the user to easily make policy config
 
 <img src="./docs/device_list.png" width="50%" align="center">
 
-By clicking on a device, the rules pertraining to that device become visible in a dropdown. 
+By clicking on a device, the rules pertaining to that device become visible in a dropdown. 
 
 <img src="./docs/rules_list.png" width="50%" align="center">
 
@@ -87,4 +87,4 @@ Each rule is shown with either a green or red background originally. Green means
 
 ### Responsive Design
 
-The website works well in both dekstop and mobile web environments. 
+The website works well in both desktop and mobile web environments. 
