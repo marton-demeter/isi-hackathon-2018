@@ -10,8 +10,8 @@ class App extends React.Component {
   }
   componentDidMount() {
     let host;
-    location.hostname=='localhost' ? host=location.host : host=location.hostname;
-    let socket = io.connect('http://' + location.hostname + ':8080');
+    location.hostname=='localhost' ? host='localhost:8080' : host=location.hostname;
+    let socket = io.connect('http://' + host);
     socket.on('connected', data => {
       console.log(data);
     });
