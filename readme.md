@@ -23,7 +23,7 @@ The user interface marks the final step in the data flow process. After the algo
     ],
     "packets": [
       {
-        "id": [ 295 ],
+        "id": [ 295, 296 ],
         "date": "2016/06/09",
         "time": "06:21:10",
         "source_ip": "10.10.10.123",
@@ -35,7 +35,7 @@ The user interface marks the final step in the data flow process. After the algo
         "good_packet": 1,
         "allowed": 1
       }, {
-        "id": [ 296 ],
+        "id": [ 297 ],
         "date": "2016/06/09",
         "time": "06:21:10",
         "source_ip": "10.10.10.123",
