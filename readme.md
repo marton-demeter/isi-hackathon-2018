@@ -12,31 +12,45 @@ The front-end was implemented with the React javascript framework to handle the 
 <br>
 ### Data Flow
 
-The user interface marks the final step in the data flow process. After the algorithm has determined the policies for all discovered devices on the server, it sends the information to the backend API-server in the form of a POST request. The following packet format is the template to represent a unique device found on the network:
+The user interface marks the final step in the data flow process. After the algorithm has determined the policies for all discovered devices on the server, it sends the information to the backend API-server in the form of a POST request. The following is an example of an object that represents a device found on the network:
 <br>
 ```javascript
 {
-  "ff:ff:ff:ff:ff:ff": {
-    "org": String(),
-    "host": [ String() ],
-    "token": [ String() ],
-    "model": [ String() ],
-    "serialNumber": [ String() ],
+  "20:f8:5e:ca:91:52": {
+    "org": "",
+    "host": [
+      "www.fitbit.com"
+    ],
     "packets": [
       {
-        "id": [ Number() ],
-        "date": String(),
-        "time": String(),
-        "source_ip": String(),
-        "source_port": String(),
-        "dest_mac": String(),
-        "dest_ip": String(),
-        "dest_port": String(),
-        "protocol": String(),
-        "good_packet": Number(),
-        "allowed": Number()
+        "id": [ 295 ],
+        "date": "2016/06/09",
+        "time": "06:21:10",
+        "source_ip": "10.10.10.123",
+        "source_port": "59904",
+        "dest_mac": "00:b5:6d:06:08:ba",
+        "dest_ip": "10.10.10.1",
+        "dest_port": "53",
+        "protocol": "DNS",
+        "good_packet": 1,
+        "allowed": 1
+      }, {
+        "id": [ 296 ],
+        "date": "2016/06/09",
+        "time": "06:21:10",
+        "source_ip": "10.10.10.123",
+        "source_port": "",
+        "dest_mac": "00:b5:6d:06:08:ba",
+        "dest_ip": "104.16.65.50",
+        "dest_port": "",
+        "protocol": "HTTP",
+        "good_packet": 1,
+        "allowed": 1
       }
-    ]
+    ],
+    "token": [ "YdVrYEOhu9iXcEZNAs8m" ],
+    "serialNumber": [ "20F85ECA9152" ],
+    "model": []
   }
 }
 ```
@@ -50,7 +64,7 @@ Each object in the "packets" array acts as a rule for the device. In the interes
   "dest_mac": String(),
   "dest_ip": String(),
   "dest_port": String(),
-  "protocol": String(),
+  "protocol": String()
 }
 ```
 If two packets include the same information in these fields, they will be represented under a single rule, and their id will be preserved in the "id" array.
