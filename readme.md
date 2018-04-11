@@ -69,4 +69,8 @@ By clicking on a device, the rules pertraining to that device become visible in 
 
 <img src="./docs/rules_list.png" width="50%" align="center">
 
-Each rule is shown with either a green or red background originally. Green means that the policy generation algorithm has allowed the packet to pass through, while red means that the policy generation algorithm has blocked the packet. Each rule then can further be modified manually to override the default generated policies. 
+Each rule is shown with either a green or red background originally. Green means that the policy generation algorithm has allowed the packet to pass through, while red means that the policy generation algorithm has blocked the packet. Each rule then can further be modified manually to override the default generated policies.
+
+### Responsive Design
+
+The website works well in both dekstop and mobile web environments. 
